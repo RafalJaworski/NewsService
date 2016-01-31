@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class NewsRepository extends EntityRepository
 {
+    public function newsFromNewest()
+    {
+        return $this
+            ->createQueryBuilder('n')
+            ->orderBy('n.updatedAt','DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }
