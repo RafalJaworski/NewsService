@@ -13,4 +13,11 @@
             </div>
         </div>
     </row>
+    {% for post in news %}
+        <div>
+            <h3>{{ post.header }}</h3>
+            <p>{{ post.content }}</p>
+            <h5>{{ post.updatedAt|date('Y-m-d H:i:s') }}</h5>
+        </div>
+    {% endfor %}
 {% endblock %}

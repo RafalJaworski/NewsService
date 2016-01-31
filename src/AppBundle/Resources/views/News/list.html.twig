@@ -4,12 +4,26 @@
 
 {% block body %}
     <div class="col-md-12">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1>Welcome in News Management</h1>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
+            <div class="col-md-3">
                 <a href="{{ path('admin_index') }}" class="btn btn-success">{{ 'Admin Panel' }}</a>
-        </div>
+            </div>
+            <div class="col-md-3">
+                <a href="{{ path('admin_news_create') }}" class="btn btn-danger">{{ 'New Entry' }}</a>
+            </div>
+        </div >
+        {% for post in news %}
+            <div class="col-md-3">
+                <h3>{{ post.header }}</h3>
+                <p>{{ post.content }}</p>
+                <h5>{{ post.updatedAt|date('Y-m-d H:i:s') }}</h5>
+                <a href="{{ path('admin_news_edit',{'id':post.id}) }}" class="btn btn-info">{{ 'Edit Entry' }}</a>
+            </div>
+
+        {% endfor %}
 
     </div>
 {% endblock %}

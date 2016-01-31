@@ -8,8 +8,14 @@
             <div class="col-md-8">
                 <h1>Admin Panel</h1>
             </div>
-            <div class="col-md-6">
-                <a href="{{ path('admin_news_list') }}" class="btn btn-success">{{ 'News Management' }}</a>
+            <div class="col-md-8">
+                <div class="col-md-3">
+                    <a href="{{ path('admin_news_list') }}" class="btn btn-success">{{ 'News Management' }}</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="{{ path('homepage') }}" class="btn btn-info">{{ 'Back to news' }}</a>
+                </div>
+
             </div>
 
         </div>

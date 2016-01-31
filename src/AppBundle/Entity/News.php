@@ -2,13 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * News
  *
  * @ORM\Table(name="news")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NewsRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class News
 {
@@ -37,18 +40,24 @@ class News
 
     /**
      * @var \DateTime
-     *
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $createdAt;
 
     /**
      * @var \DateTime
-     *
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
 
+    /** @ORM\PrePersist */
+    public function datesOnPrePersist()
+    {
+        $this->createdAt = new DateTime();
+        $this->updatedAt = new DateTime();
+    }
 
     /**
      * Get id
