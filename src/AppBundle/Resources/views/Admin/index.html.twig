@@ -3,5 +3,15 @@
 {% block title %}AppBundle:Admin:index{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Admin:index page</h1>
+    <row>
+        <div class="col-md-12">
+            <div class="col-md-8">
+                <h1>Admin Panel</h1>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ path('admin_news_list') }}" class="btn btn-success">{{ 'News Management' }}</a>
+            </div>
+
+        </div>
+    </row>
 {% endblock %}

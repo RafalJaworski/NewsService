@@ -3,5 +3,14 @@
 {% block title %}AppBundle:HomePage:list{% endblock %}
 
 {% block body %}
-<h1>Welcome to the HomePage:list page</h1>
+    <row>
+        <div class="col-md-12">
+            <div class="col-md-8">
+                <h1>Welcome in the News Service</h1>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ path('admin_index') }}" class="btn btn-success">{{ 'Admin Panel' }}</a>
+            </div>
+        </div>
+    </row>
 {% endblock %}

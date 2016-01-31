@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class NewsController extends Controller
 {
     /**
-     * @Route("/admin/news/list")
+     * @Route("/admin/news/list", name="admin_news_list")
      */
     public function listAction()
     {
